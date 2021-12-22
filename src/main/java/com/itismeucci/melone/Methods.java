@@ -35,11 +35,40 @@ public class Methods
 		return fileData;
 	}
 	
-	public String getContentType(String fileRequested) {
+	public String getContentType(String fileRequested) 
+	{
+		String returncontent="";
+
 		if (fileRequested.endsWith(".htm")  ||  fileRequested.endsWith(".html"))
-			return "text/html";
-		else
-			return "text/plain";
+			returncontent="text/html";
+
+		if(fileRequested.endsWith(".jpg") || fileRequested.endsWith(".jpeg"))
+		{
+			returncontent="image/jpeg";
+		}
+		
+		if(fileRequested.endsWith(".png"))
+		{
+			returncontent="image/png";
+		}
+
+		if(fileRequested.endsWith(".gif"))
+		{
+			returncontent="image/gif";
+		}
+
+		if(fileRequested.endsWith(".js"))
+		{
+			returncontent="application/javascript";
+		}
+
+		if(fileRequested.endsWith(".css"))
+		{
+			returncontent="text/css";
+		}
+
+		return returncontent;
+
 	}
 
 
